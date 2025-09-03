@@ -7,11 +7,12 @@ This project is designed to streamline hospital workflows, making healthcare man
 
 Live Demo
 🔗 [View Hospital Management System](#)  
-*(Add your deployed link here if you host it on Vercel/Netlify/Render)*
+ 
 
 ---
 
 🛠️ Tech Stack
+
 **Frontend:** React, Vite, JavaScript, Tailwind CSS  
 **Backend:** Node.js, Express.js, MongoDB  
 **Icons:** Lucide React  
