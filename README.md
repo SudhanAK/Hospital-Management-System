@@ -14,10 +14,9 @@ Live Demo
 🛠️ Tech Stack
 
 **Frontend:** React, Vite, JavaScript, Tailwind CSS  
-**Backend:** Node.js, Express.js, MongoDB  
-**Icons:** Lucide React  
-**Deployment:** GitHub Pages / Vercel / Render (as per your setup)  
-**Other Tools:** Figma (for UI design), Postman (for API testing)  
+**Backend:** Node.js, Express.js, MongoDB   
+**Deployment:** GitHub Pages 
+ 
 
 ---
 
