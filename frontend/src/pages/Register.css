@@ -1,14 +1,12 @@
-img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  display: block;
-}
-
 .parent {
   position: relative;
   top: 0;
   left: 0;
+  background-image: url('page.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .child {
@@ -16,17 +14,13 @@ img {
   top: 17%;
   left: 30%;
   background: rgba(255, 255, 255, 0.8);
-  border: 1px solid white;
   border-radius: 20px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
-  border: 0;
   padding: 20px;
   width: 790px;
   height: 450px;
   overflow-x: hidden;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(225, 225, 225, 0.1) transparent;
 }
 
 .text {
@@ -57,11 +51,6 @@ input::placeholder {
   font-size: 20px;
   border-radius: 5px;
   margin-left: 27%;
-}
-
-.link2 {
-  text-decoration: none;
-  color: green;
 }
 
 .equals {
@@ -95,8 +84,8 @@ input::placeholder {
 .blood {
   margin-left: 70px;
 }
- 
-@media (max-width: 1024px) {
+
+ @media (max-width: 1024px) {
   .child {
     top: 15%;
     left: 50%;
@@ -122,8 +111,7 @@ input::placeholder {
   }
 }
 
-/* Mobiles (<=768px) */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
   .child {
     top: 12%;
     width: 95%;
@@ -142,17 +130,7 @@ input::placeholder {
   }
 }
 
- 
-@media (max-width: 480px) {
-  img {
-    display: none;  
-  }
-
-  .parent {
-    background: #f8f9fa;  
-    min-height: 100vh;
-  }
-
+ @media (max-width: 480px) {
   .child {
     position: relative;
     top: 10%;

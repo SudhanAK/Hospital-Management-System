@@ -23,7 +23,7 @@ function Register() {
     async function Fetch(e) {
         e.preventDefault();
 
-         if (!name) return setErr("*Fill the name");
+        if (!name) return setErr("*Fill the name");
         if (!pass) return setErr("*Fill the password");
         if (!cpass) return setErr("*Fill the confirm password");
         if (!mail) return setErr("*Fill the mail");
@@ -44,7 +44,7 @@ function Register() {
         if (new Date(dob) > new Date()) return setErr("*Date Should not be greater than current");
         if (!mail.includes('@') || mail.lastIndexOf('@') > mail.indexOf('.com')) return setErr("*Invalid Mail");
 
-         try {
+        try {
             const res = await fetch('http://localhost:3000/patient-detail', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -57,9 +57,9 @@ function Register() {
                 return alert("Already Have An Account!!");
             }
 
-             localStorage.setItem("mail", mail);
+            localStorage.setItem("mail", mail);
 
-             const registerRes = await fetch('http://localhost:3000/add-patient', {
+            const registerRes = await fetch('http://localhost:3000/add-patient', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, mail, pass, cpass, num, dob, gen, bg, addr, state, city, pin })
@@ -68,7 +68,7 @@ function Register() {
             const registerData = await registerRes.text();
             alert(registerData);
 
-             navigate('/PatientDash');
+            navigate('/PatientDash');
 
         } catch (error) {
             console.error(error);
@@ -78,18 +78,17 @@ function Register() {
 
     return (
         <div className='parent'>
-            <img src='page.png' alt=''></img>
             <div className='child'>
                 <form>
                     <p style={{ textAlign: "center", fontSize: "30px", fontWeight: "bold" }}>
                         <span style={{ color: 'green' }}>HealthCure</span> <span style={{ color: 'darkred' }}>Hospital</span>
                     </p>
                     <div className='equals'>
+                        {/* form inputs here (same as original) */}
                         <div>
                             <label className='text'> Full Name</label><br /><br />
                             <input onChange={(e) => { setName(e.target.value) }} type="text" placeholder='Your Name...' required></input>
                         </div>
-
                         <div>
                             <label className='text'> Email</label><br /><br />
                             <input onChange={(e) => setMail(e.target.value)} type="email" placeholder='Your Email...' required></input>
@@ -102,18 +101,15 @@ function Register() {
                             <label className='text'> Confirm Password</label><br /><br />
                             <input onChange={(e) => setCpass(e.target.value)} type="password" placeholder='Your Password...' required></input>
                         </div>
-
                         <div>
                             <label className='text'> Phone Number</label><br /><br />
                             <input onChange={(e) => setNum(e.target.value)} type="number" placeholder='Your Phone...' required></input>
                         </div>
-
                         <div>
                             <label className='text'> Date Of Birth</label><br /><br />
                             <input onChange={(e) => setDob(e.target.value)} type="date" className='datebox' required></input>
                         </div>
-
-                        <div  >
+                        <div>
                             <label className='text' > Gender</label><br /><br />
                             <div className='flex'>
                                 <input onChange={(e) => setGen(e.target.value)} className='gender' type="radio" id='male' name="genders" value="male" required></input>
@@ -128,7 +124,6 @@ function Register() {
                                 <label className='text'>Others</label>
                             </div>
                         </div>
-
                         <div className='blood'>
                             <label className='text'> Blood Group</label><br /><br />
                             <select onChange={(e) => setBg(e.target.value)} className='drop'>
@@ -142,12 +137,10 @@ function Register() {
                                 <option>O-</option>
                             </select>
                         </div>
-
                         <div>
                             <label className='text'> Address</label><br /><br />
                             <input onChange={(e) => setAddr(e.target.value)} type="text" placeholder='Your Address...' required></input>
                         </div>
-
                         <div>
                             <label className='text'> State</label><br /><br />
                             <input onChange={(e) => setState(e.target.value)} type="text" placeholder='Your State...' required></input>
