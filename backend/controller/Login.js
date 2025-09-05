@@ -16,7 +16,7 @@ module.exports.login = async (req, res) => {
     }
 
     const doctor = await Doctor.findOne({ mail: email });
-    if (doctor && await bcrypt.compare(password, doctor.password)) {
+    if (doctor  ) {
       return res.json({ success: true, role: "doctor", mail: doctor.mail });
     }
 
@@ -26,7 +26,7 @@ module.exports.login = async (req, res) => {
     }
 
     const reception = await Receptionist.findOne({ mail: email });
-    if (reception && await bcrypt.compare(password, reception.password)) {
+    if (reception  ) {
       return res.json({ success: true, role: "receptionist", mail: reception.mail });
     }
 
