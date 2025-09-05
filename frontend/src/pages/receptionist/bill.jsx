@@ -8,7 +8,7 @@ function Bill() {
    useEffect(() => {
     async function GetPatient() {
       try {
-        const res = await fetch('http://localhost:3000/all-patient', {
+        const res = await fetch('https://hospital-management-system-b06p.onrender.com/all-patient', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({})
@@ -27,7 +27,7 @@ function Bill() {
     async function fetchBill() {
       if (!sname) return;
       try {
-        const res = await fetch('http://localhost:3000/search-bill', {
+        const res = await fetch('https://hospital-management-system-b06p.onrender.com/search-bill', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ sname })

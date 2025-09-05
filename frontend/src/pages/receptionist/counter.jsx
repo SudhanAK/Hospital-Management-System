@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function Billcounter() {
   const [status, setStatus] = useState('pending');
-  const [amounts, setAmounts] = useState({});  // medicineIndex → amount
+  const [amounts, setAmounts] = useState({});   
   const [total, setTotal] = useState(0);
 
   const [patient, setPatient] = useState([]);
@@ -13,7 +13,7 @@ function Billcounter() {
   useEffect(() => {
     async function Getpatient() {
       try {
-        const res = await fetch('http://localhost:3000/all-patient', {
+        const res = await fetch('https://hospital-management-system-b06p.onrender.com/all-patient', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({})
@@ -28,12 +28,11 @@ function Billcounter() {
     Getpatient();
   }, []);
 
-  // Fetch prescriptions for selected patient
-  useEffect(() => {
+   useEffect(() => {
     if (!sname) return;
     async function Getreception() {
       try {
-        const res1 = await fetch('http://localhost:3000/s-reception', {
+        const res1 = await fetch('https://hospital-management-system-b06p.onrender.com/s-reception', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ sname })
@@ -60,8 +59,7 @@ function Billcounter() {
     Getreception();
   }, [sname]);
 
-  // Track amounts and total dynamically
-  function updateAmount(index, value) {
+   function updateAmount(index, value) {
     const val = Number(value) || 0;
     setAmounts(prev => {
       const updated = { ...prev, [index]: val };
@@ -74,8 +72,7 @@ function Billcounter() {
   async function Fetch(e, billData) {
     e.preventDefault();
 
-    // Build arrays exactly like backend expects
-    const amountArr = billData.medicines.map((_, idx) => amounts[idx] || 0);
+     const amountArr = billData.medicines.map((_, idx) => amounts[idx] || 0);
 
     const pres = {
       docname: billData.doctor,
@@ -101,7 +98,7 @@ function Billcounter() {
     };
 
     try {
-      const res = await fetch('http://localhost:3000/set-bill', {
+      const res = await fetch('https://hospital-management-system-b06p.onrender.com/set-bill', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(pres)

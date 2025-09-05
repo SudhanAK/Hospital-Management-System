@@ -36,7 +36,7 @@ const [alldoctor ,setAlldoctor]=useState({})
   useEffect(() => {
     async function fetchDoctors() {
       try {
-        const result = await fetch('http://localhost:3000/all-doctor', {
+        const result = await fetch('https://hospital-management-system-b06p.onrender.com/all-doctor', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({})
@@ -54,7 +54,7 @@ const [alldoctor ,setAlldoctor]=useState({})
     async function fetchDoctor() {
       if (!sname) return;
       try {
-        const res = await fetch('http://localhost:3000/show-doctor', {
+        const res = await fetch('https://hospital-management-system-b06p.onrender.com/show-doctor', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name: sname })
@@ -71,7 +71,7 @@ const [alldoctor ,setAlldoctor]=useState({})
   useEffect(() => {
     async function fetchPatients() {
       try {
-        const result = await fetch('http://localhost:3000/all-patient', {
+        const result = await fetch('https://hospital-management-system-b06p.onrender.com/all-patient', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({})
@@ -89,7 +89,7 @@ const [alldoctor ,setAlldoctor]=useState({})
     async function fetchPatient() {
       if (!pname) return;
       try {
-        const res = await fetch('http://localhost:3000/show-patient', {
+        const res = await fetch('https://hospital-management-system-b06p.onrender.com/show-patient', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name: pname })
@@ -162,7 +162,7 @@ const [alldoctor ,setAlldoctor]=useState({})
       return setErr('*medicine route is empty')
     }
     
-    fetch('http://localhost:3000/add-prescription',
+    fetch('https://hospital-management-system-b06p.onrender.com/add-prescription',
       {
         method:"POST",
         headers:{"Content-Type":"application/json"},

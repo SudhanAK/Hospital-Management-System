@@ -45,7 +45,7 @@ function Register() {
         if (!mail.includes('@') || mail.lastIndexOf('@') > mail.indexOf('.com')) return setErr("*Invalid Mail");
 
         try {
-            const res = await fetch('http://localhost:3000/patient-detail', {
+            const res = await fetch('https://hospital-management-system-b06p.onrender.com/patient-detail', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ mail })
@@ -59,7 +59,7 @@ function Register() {
 
             localStorage.setItem("mail", mail);
 
-            const registerRes = await fetch('http://localhost:3000/add-patient', {
+            const registerRes = await fetch('https://hospital-management-system-b06p.onrender.com/add-patient', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, mail, pass, cpass, num, dob, gen, bg, addr, state, city, pin })
@@ -84,7 +84,7 @@ function Register() {
                         <span style={{ color: 'green' }}>HealthCure</span> <span style={{ color: 'darkred' }}>Hospital</span>
                     </p>
                     <div className='equals'>
-                        {/* form inputs here (same as original) */}
+                         
                         <div>
                             <label className='text'> Full Name</label><br /><br />
                             <input onChange={(e) => { setName(e.target.value) }} type="text" placeholder='Your Name...' required></input>

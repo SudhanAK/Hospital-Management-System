@@ -73,7 +73,7 @@ function Settings({ patient }) {
     const patientid = patient.id;
     if (!patientid) return alert("Update form empty");
 
-    fetch('http://localhost:3000/update-patient', {
+    fetch('https://hospital-management-system-b06p.onrender.com/update-patient', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

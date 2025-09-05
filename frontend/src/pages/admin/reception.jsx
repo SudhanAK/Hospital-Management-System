@@ -22,7 +22,7 @@ function reception() {
     console.log(sname)
     useEffect(()=>{
      async function  data1(){
-    const result= await fetch('http://localhost:3000/all-reception',{
+    const result= await fetch('https://hospital-management-system-b06p.onrender.com/all-reception',{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({})
@@ -39,7 +39,7 @@ function reception() {
   console.log(allreception)
   useEffect(()=>{
      async function  data(){
-    const res= await fetch('http://localhost:3000/show-reception',{
+    const res= await fetch('https://hospital-management-system-b06p.onrender.com/show-reception',{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({name:sname})
@@ -149,7 +149,7 @@ function reception() {
         }
         
 
-        fetch('http://localhost:3000/add-reception',{
+        fetch('https://hospital-management-system-b06p.onrender.com/add-reception',{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({name,pass,mail,num,dob,gen,addr,state,city,pin})
@@ -163,7 +163,7 @@ function reception() {
       e.preventDefault();
       const receptionid=reception.id;
       if(!receptionid){return alert("Update form empty")}
-      fetch('http://localhost:3000/update-reception',{
+      fetch('https://hospital-management-system-b06p.onrender.com/update-reception',{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({receptionid,receptionname,receptionpass,receptionmail,receptionmobile,receptiondob,receptiongender,receptionaddress,receptionstate,receptioncity,receptionpin})
@@ -177,7 +177,7 @@ function reception() {
       e.preventDefault();
       const receptionid=reception.id;
       if(!receptionid){return alert("Update form empty")}
-      fetch('http://localhost:3000/delete-reception',{
+      fetch('https://hospital-management-system-b06p.onrender.com/delete-reception',{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({receptionid})

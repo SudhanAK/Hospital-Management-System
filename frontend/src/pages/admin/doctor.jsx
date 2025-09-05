@@ -24,7 +24,7 @@ import React, { useState ,useEffect} from 'react'
       const [sname,setSname]=useState(null)
       useEffect(()=>{
      async function  data1(){
-    const result= await fetch('http://localhost:3000/all-doctor',{
+    const result= await fetch('https://hospital-management-system-b06p.onrender.com/all-doctor',{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({})
@@ -41,7 +41,7 @@ import React, { useState ,useEffect} from 'react'
   console.log(alldoctor)
   useEffect(()=>{
      async function  data(){
-    const res= await fetch('http://localhost:3000/show-doctor',{
+    const res= await fetch('https://hospital-management-system-b06p.onrender.com/show-doctor',{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({name:sname})
@@ -147,7 +147,7 @@ import React, { useState ,useEffect} from 'react'
     if(new Date(dob)>(new Date())){
       return setErr("*Invalid DOB")
     }
-    fetch('http://localhost:3000/add-doctor',
+    fetch('https://hospital-management-system-b06p.onrender.com/add-doctor',
       {
         method:"POST",
         headers:{"Content-Type":"application/json"},
@@ -162,7 +162,7 @@ import React, { useState ,useEffect} from 'react'
       e.preventDefault();
       const doctorid=doctor.id;
       if(!doctorid){return alert("Delete form empty")}
-      fetch('http://localhost:3000/update-doctor',{
+      fetch('https://hospital-management-system-b06p.onrender.com/update-doctor',{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({doctorid,doctorname,doctorpass,doctorspecial,doctorqual,doctorexp,doctormail,doctormobile,doctorgender,doctoraddress,doctorstate,doctorcity,doctorpin})
@@ -176,7 +176,7 @@ import React, { useState ,useEffect} from 'react'
       e.preventDefault();
       const doctorid=doctor.id;
       if(!doctorid){return alert("Delete form empty")}
-      fetch('http://localhost:3000/delete-doctor',{
+      fetch('https://hospital-management-system-b06p.onrender.com/delete-doctor',{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({doctorid})

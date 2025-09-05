@@ -6,7 +6,7 @@ import Patient from "./Patient.jsx"
 import Doctorschedule from "./doctorschedule.jsx"
 import Patientschedule from "./patientschedule.jsx"
 import Prescription from "./prescription.jsx"
-import Casestudy from "./casestudies.jsx"
+ 
 import Setting from "./settings.jsx"
 import Chat from "./chat.jsx"
 import Bill from "./bill.jsx"

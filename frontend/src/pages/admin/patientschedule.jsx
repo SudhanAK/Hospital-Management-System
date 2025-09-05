@@ -21,7 +21,7 @@ function PatientSchedule() {
   useEffect(() => {
     async function Details() {
       try {
-        const result = await fetch('http://localhost:3000/details', {
+        const result = await fetch('https://hospital-management-system-b06p.onrender.com/details', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ search })
@@ -38,7 +38,7 @@ function PatientSchedule() {
   useEffect(() => {
     async function fetchDoctors() {
       try {
-        const result = await fetch('http://localhost:3000/all-doctor', {
+        const result = await fetch('https://hospital-management-system-b06p.onrender.com/all-doctor', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({})
@@ -56,7 +56,7 @@ function PatientSchedule() {
     async function fetchDoctor() {
       if (!sname) return;
       try {
-        const res = await fetch('http://localhost:3000/show-doctor', {
+        const res = await fetch('https://hospital-management-system-b06p.onrender.com/show-doctor', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name: sname })
@@ -73,7 +73,7 @@ function PatientSchedule() {
   useEffect(() => {
     async function fetchPatients() {
       try {
-        const result = await fetch('http://localhost:3000/all-patient', {
+        const result = await fetch('https://hospital-management-system-b06p.onrender.com/all-patient', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({})
@@ -91,7 +91,7 @@ function PatientSchedule() {
     async function fetchPatient() {
       if (!pname) return;
       try {
-        const res = await fetch('http://localhost:3000/show-patient', {
+        const res = await fetch('https://hospital-management-system-b06p.onrender.com/show-patient', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name: pname })
@@ -116,7 +116,7 @@ function PatientSchedule() {
     if (!status) return setErr("*Fill Status");
 
     try {
-      const res = await fetch('http://localhost:3000/add-patient-schedule', {
+      const res = await fetch('https://hospital-management-system-b06p.onrender.com/add-patient-schedule', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ patname, date, time: start, purpose, start, docname, status })
@@ -128,7 +128,7 @@ function PatientSchedule() {
     }
   }
   function Delete( nameid,  date, time, purpose,  doctor, status) {
-  fetch('http://localhost:3000/patient-delete', {
+  fetch('https://hospital-management-system-b06p.onrender.com/patient-delete', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ nameid,  date, time, purpose,  doctor, status})

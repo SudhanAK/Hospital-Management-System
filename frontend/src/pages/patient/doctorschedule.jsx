@@ -15,7 +15,7 @@ function doctorschedule() {
   const [doctor,setDoctor]=useState([]);
    useEffect(()=>{
      async function  data1(){
-    const result= await fetch('http://localhost:3000/all-doctor',{
+    const result= await fetch('https://hospital-management-system-b06p.onrender.com/all-doctor',{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({})
@@ -31,7 +31,7 @@ function doctorschedule() {
   },[])
   useEffect(()=>{
      async function  data(){
-    const res= await fetch('http://localhost:3000/doctor-schedule',{
+    const res= await fetch('https://hospital-management-system-b06p.onrender.com/doctor-schedule',{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({name:sname})
@@ -80,7 +80,7 @@ function doctorschedule() {
            return;  }
       
      
-    fetch('http://localhost:3000/add-doctor-schedule',
+    fetch('https://hospital-management-system-b06p.onrender.com/add-doctor-schedule',
       {
         method:"POST",
         headers:{"Content-Type":"application/json"},
@@ -94,7 +94,7 @@ function doctorschedule() {
 
   }
   function Delete(nameid, week, duty, date, timeslot) {
-  fetch('http://localhost:3000/delete', {
+  fetch('https://hospital-management-system-b06p.onrender.com/delete', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ docname: nameid, week, duty, date, timeslot })

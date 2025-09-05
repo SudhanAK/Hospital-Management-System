@@ -9,7 +9,7 @@ function chat() {
 
   useEffect(()=>{
     async function call(){  
-    const res= await fetch('http://localhost:3000/get-message',{
+    const res= await fetch('https://hospital-management-system-b06p.onrender.com/get-message',{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({})
@@ -24,7 +24,7 @@ function chat() {
   console.log(message)
   function Fetch(e){
     e.preventDefault();
-    fetch('http://localhost:3000/update-message',{
+    fetch('https://hospital-management-system-b06p.onrender.com/update-message',{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({id,reply})

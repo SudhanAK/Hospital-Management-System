@@ -12,7 +12,7 @@ function Prescription() {
    useEffect(() => {
     async function Getpatient() {
       try {
-        const res = await fetch('http://localhost:3000/all-patient', {
+        const res = await fetch('https://hospital-management-system-b06p.onrender.com/all-patient', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({})
@@ -31,7 +31,7 @@ function Prescription() {
     if (!sname) return;
     async function Getreception() {
       try {
-        const res1 = await fetch('http://localhost:3000/s-reception', {
+        const res1 = await fetch('https://hospital-management-system-b06p.onrender.com/s-reception', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ sname })
@@ -97,7 +97,7 @@ function Prescription() {
     };
 
     try {
-      const res = await fetch('http://localhost:3000/set-bill', {
+      const res = await fetch('https://hospital-management-system-b06p.onrender.com/set-bill', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(pres)

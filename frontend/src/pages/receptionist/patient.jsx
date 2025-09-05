@@ -23,7 +23,7 @@ function patient() {
     console.log(sname)
     useEffect(()=>{
      async function  data1(){
-    const result= await fetch('http://localhost:3000/all-patient',{
+    const result= await fetch('https://hospital-management-system-b06p.onrender.com/all-patient',{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({})
@@ -40,7 +40,7 @@ function patient() {
   console.log(allpatient)
   useEffect(()=>{
      async function  data(){
-    const res= await fetch('http://localhost:3000/show-patient',{
+    const res= await fetch('https://hospital-management-system-b06p.onrender.com/show-patient',{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({name:sname})
@@ -160,7 +160,7 @@ function patient() {
       e.preventDefault();
       const patientid=patient.id;
       if(!patientid){return alert("Update form empty")}
-      fetch('http://localhost:3000/update-patient',{
+      fetch('https://hospital-management-system-b06p.onrender.com/update-patient',{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({patientid,patientname,patientpass,patientmail,patientmobile,patientdob,patientgender,patientbloodgroup,patientaddress,patientstate,patientcity,patientpin})
@@ -174,7 +174,7 @@ function patient() {
       e.preventDefault();
       const patientid=patient.id;
       if(!patientid){return alert("Delete form empty")}
-      fetch('http://localhost:3000/delete-patient',{
+      fetch('https://hospital-management-system-b06p.onrender.com/delete-patient',{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({patientid})
