@@ -40,11 +40,8 @@ Live Demo
 
  <img width="1890" height="907" alt="Screenshot 2025-09-08 144848" src="https://github.com/user-attachments/assets/6c68d18d-881f-4265-8823-2986850d29c5" />
 
-<img width="1893" height="899" alt="Screenshot 2025-09-08 144921" src="https://github.com/user-attachments/assets/443ca775-1954-48
-
+<img width="1893" height="899" alt="Screenshot 2025-09-08 144921" src="https://github.com/user-attachments/assets/443ca775-1954-48af-8036-1bbe5278e684" />
 <img width="1903" height="910" alt="Screenshot 2025-09-08 144932" src="https://github.com/user-attachments/assets/0f36b250-1b5b-435a-a276-bcff7180eab2" />
-
-af-8036-1bbe5278e684" />
 
  <img width="1885" height="883" alt="Screenshot 2025-09-08 145004" src="https://github.com/user-attachments/assets/1e5b2ec9-ada9-433e-a56b-38509fba5841" />
 
